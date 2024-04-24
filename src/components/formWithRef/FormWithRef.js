@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import './FormWithRef.css';
 
+const MAX_LENGTH = 16;
+
 export class FormWithRef extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +15,11 @@ export class FormWithRef extends Component {
     }
 
     inputHandler = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({ [event.target.name]: event.target.value }, () => {
+            if (this.state.userName.length === MAX_LENGTH) {
+                this.userEmailRef.current.focus();
+            }
+        });
     }
 
     componentDidMount() {
