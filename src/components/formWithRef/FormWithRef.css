@@ -1,0 +1,11 @@
+.FormWithRef {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 100px auto 0;
+}
+
+.FormWithRefInput {
+    margin-top: 20px;
+    padding: 6px 12px;
+}
